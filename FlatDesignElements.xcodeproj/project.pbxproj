@@ -15,6 +15,7 @@
 		75164C301E9D7D340083F7C8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75164C2E1E9D7D340083F7C8 /* LaunchScreen.storyboard */; };
 		75164C3B1E9D7D350083F7C8 /* FlatDesignElementsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75164C3A1E9D7D350083F7C8 /* FlatDesignElementsTests.swift */; };
 		75164C461E9D7D350083F7C8 /* FlatDesignElementsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75164C451E9D7D350083F7C8 /* FlatDesignElementsUITests.swift */; };
+		75164C541E9D7D720083F7C8 /* FloatingTextField.xib in Resources */ = {isa = PBXBuildFile; fileRef = 75164C531E9D7D720083F7C8 /* FloatingTextField.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		75164C411E9D7D350083F7C8 /* FlatDesignElementsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlatDesignElementsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		75164C451E9D7D350083F7C8 /* FlatDesignElementsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlatDesignElementsUITests.swift; sourceTree = "<group>"; };
 		75164C471E9D7D350083F7C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		75164C531E9D7D720083F7C8 /* FloatingTextField.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FloatingTextField.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 				75164C221E9D7D340083F7C8 /* AppDelegate.swift */,
 				75164C241E9D7D340083F7C8 /* ViewController.swift */,
 				75164C261E9D7D340083F7C8 /* Main.storyboard */,
+				75164C531E9D7D720083F7C8 /* FloatingTextField.xib */,
 				75164C2C1E9D7D340083F7C8 /* Assets.xcassets */,
 				75164C2E1E9D7D340083F7C8 /* LaunchScreen.storyboard */,
 				75164C311E9D7D340083F7C8 /* Info.plist */,
@@ -238,6 +241,7 @@
 				75164C301E9D7D340083F7C8 /* LaunchScreen.storyboard in Resources */,
 				75164C2D1E9D7D340083F7C8 /* Assets.xcassets in Resources */,
 				75164C281E9D7D340083F7C8 /* Main.storyboard in Resources */,
+				75164C541E9D7D720083F7C8 /* FloatingTextField.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
