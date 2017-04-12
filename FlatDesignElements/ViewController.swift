@@ -16,26 +16,18 @@ class ViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
 
         super.viewDidLoad()
-        changePlaceholder()
         self.view.backgroundColor = UIColor.darkGray
-        let field_x = field.frame.origin.x - 30
-        let field_y = field.frame.origin.y
-        let field_end = field_y + field.frame.height + 5
-        let field_size = field.frame.width
 
-        let line = CAShapeLayer()
-        let linePath = UIBezierPath()
-        linePath.move(to: CGPoint(x:field_x, y:field_end))
-        linePath.addLine(to: CGPoint(x:field_x + field_size, y:field_end))
-        line.path = linePath.cgPath
-        line.strokeColor = UIColor.white.cgColor
-        line.lineWidth = 1
-        line.lineJoin = kCALineJoinRound
-        underLine = line
+        field.addTarget(self, action:#selector(fieldShow(_:)), for: UIControlEvents.touchDown)
+        field.addTarget(self, action:#selector(fieldHide(_:)), for: .editingDidEnd)
+        let image = UIImage(named: "007-user")
+        underLine = self.setupField(_field: field, fieldImage: image!)
         self.view.layer.addSublayer(underLine!)
-        field.addTarget(self, action:#selector(ViewController.fieldShow), for: UIControlEvents.touchDown)
-        field.addTarget(self, action:#selector(ViewController.fieldHide), for: .editingDidEnd)
+        changePlaceholder()
+
     }
+
+
     
     func changePlaceholder()
     {
@@ -53,7 +45,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         
     }
     
-    func fieldShow()
+    func fieldShow(_ sender:UITextField)
     {
         let animationDuration = 0.7
         CATransaction.begin()
@@ -63,14 +55,14 @@ class ViewController: UIViewController, UITextFieldDelegate {
         CATransaction.commit()
         UIView.animate(withDuration: animationDuration, delay: 0.0, options: .curveEaseOut
             , animations: {
-                self.field.alpha = 1.0
+                sender.alpha = 1.0
         }
             , completion:nil
         )
         
     }
     
-    func fieldHide()
+    func fieldHide(_ sender:UITextField)
     {
         let animationDuration = 0.7
         CATransaction.begin()
@@ -86,9 +78,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
         )
     }
 
-    @IBAction func fieldTouched(_ sender: Any) {
-
-    }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true) //This will hide the keyboard
@@ -99,6 +88,41 @@ class ViewController: UIViewController, UITextFieldDelegate {
         // Dispose of any resources that can be recreated.
     }
 
+}
 
+
+extension UIViewController {
+    
+    func setupField(_field: UITextField, fieldImage: UIImage) -> CAShapeLayer
+    {
+        let fieldImage = fieldImage
+        let field_x = _field.frame.origin.x
+        let field_y = _field.frame.origin.y
+        let field_end = field_y + _field.frame.height + 5
+        let field_size = _field.frame.width
+        
+        //Add Image
+        let vwContainer = UIView(frame: CGRect(x: 0, y: 0, width: 30, height: 25))
+        let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 25, height: 25))
+        imageView.contentMode = UIViewContentMode.scaleAspectFill
+        let image = fieldImage
+        imageView.image = image
+        vwContainer.addSubview(imageView)
+        _field.leftViewMode = UITextFieldViewMode.always
+        _field.leftView = vwContainer
+    
+        //Add Line
+        let line = CAShapeLayer()
+        let linePath = UIBezierPath()
+        linePath.move(to: CGPoint(x:field_x, y:field_end))
+        linePath.addLine(to: CGPoint(x:field_x + field_size, y:field_end))
+        line.path = linePath.cgPath
+        line.strokeColor = UIColor.white.cgColor
+        line.lineWidth = 1
+        line.lineJoin = kCALineJoinRound
+        return line
+    }
+    
+    
 }
 

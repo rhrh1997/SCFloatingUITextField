@@ -16,6 +16,7 @@
 		75164C3B1E9D7D350083F7C8 /* FlatDesignElementsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75164C3A1E9D7D350083F7C8 /* FlatDesignElementsTests.swift */; };
 		75164C461E9D7D350083F7C8 /* FlatDesignElementsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75164C451E9D7D350083F7C8 /* FlatDesignElementsUITests.swift */; };
 		75164C541E9D7D720083F7C8 /* FloatingTextField.xib in Resources */ = {isa = PBXBuildFile; fileRef = 75164C531E9D7D720083F7C8 /* FloatingTextField.xib */; };
+		75164C561E9EEB390083F7C8 /* UIFloatingFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75164C551E9EEB390083F7C8 /* UIFloatingFieldView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		75164C451E9D7D350083F7C8 /* FlatDesignElementsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlatDesignElementsUITests.swift; sourceTree = "<group>"; };
 		75164C471E9D7D350083F7C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		75164C531E9D7D720083F7C8 /* FloatingTextField.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FloatingTextField.xib; sourceTree = "<group>"; };
+		75164C551E9EEB390083F7C8 /* UIFloatingFieldView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIFloatingFieldView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 			children = (
 				75164C221E9D7D340083F7C8 /* AppDelegate.swift */,
 				75164C241E9D7D340083F7C8 /* ViewController.swift */,
+				75164C551E9EEB390083F7C8 /* UIFloatingFieldView.swift */,
 				75164C261E9D7D340083F7C8 /* Main.storyboard */,
 				75164C531E9D7D720083F7C8 /* FloatingTextField.xib */,
 				75164C2C1E9D7D340083F7C8 /* Assets.xcassets */,
@@ -267,6 +270,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				75164C251E9D7D340083F7C8 /* ViewController.swift in Sources */,
+				75164C561E9EEB390083F7C8 /* UIFloatingFieldView.swift in Sources */,
 				75164C231E9D7D340083F7C8 /* AppDelegate.swift in Sources */,
 				75164C2B1E9D7D340083F7C8 /* FlatDesignElements.xcdatamodeld in Sources */,
 			);
