@@ -10,9 +10,20 @@ import UIKit
 
 class UIFloatingFieldView: UITextField, UITextFieldDelegate {
     
+    var leftIconContainer:UIView?
+    var iconImageView:UIImageView?
     var underline:CAShapeLayer?
     var placeholderText:String?
-    
+    @IBInspectable var leftImage:UIImage?
+        {
+            didSet
+            {
+                self.iconImageView?.image = self.leftImage
+                self.leftViewMode = UITextFieldViewMode.always
+                self.leftView = leftIconContainer
+            }
+    }
+
     override init (frame : CGRect)
     {
         super.init(frame : frame)
@@ -21,39 +32,34 @@ class UIFloatingFieldView: UITextField, UITextFieldDelegate {
         
     }
     
-    func setPlaceholder(text: String)
-    {
-        placeholderText = text
-        self.placeholder = placeholderText
-    }
     
     func commonInit()
     {
         self.borderStyle = UITextBorderStyle.none
+        placeholderText = self.placeholder
         self.addTarget(self, action:#selector(fieldShow(_:)), for: UIControlEvents.touchDown)
         self.addTarget(self, action:#selector(fieldHide(_:)), for: .editingDidEnd)
-        let image = UIImage(named: "007-user")
-        setupField(fieldImage: image!)
+  
+        setupField()
+    
         changePlaceholder()
     }
     
-    func setupField(fieldImage: UIImage)
+    func setupField()
     {
-        let fieldImage = fieldImage
         let field_x = CGFloat(0)
         let field_y = CGFloat(0)
         let field_end = field_y + self.frame.height + 5
         let field_size = self.frame.width
         
         //Add Image
-        let vwContainer = UIView(frame: CGRect(x: 0, y: 0, width: 30, height: 25))
-        let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 25, height: 25))
-        imageView.contentMode = UIViewContentMode.scaleAspectFill
-        let image = fieldImage
-        imageView.image = image
-        vwContainer.addSubview(imageView)
-        self.leftViewMode = UITextFieldViewMode.always
-        self.leftView = vwContainer
+    
+        self.leftIconContainer = UIView(frame: CGRect(x: 0, y: 0, width: 30, height: 25))
+        self.iconImageView = UIImageView()
+        self.iconImageView?.frame = CGRect(x: 0, y: 0, width: 25, height: 25)
+        self.iconImageView?.contentMode = UIViewContentMode.scaleAspectFill
+        self.leftIconContainer?.addSubview(iconImageView!)
+
         
         //Add Line
         let line = CAShapeLayer()

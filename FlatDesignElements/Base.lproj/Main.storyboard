@@ -21,15 +21,52 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Poi-8g-fXB" customClass="UIFloatingFieldView" customModule="FlatDesignElements" customModuleProvider="target">
-                                <rect key="frame" x="68" y="136" width="239" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Poi-8g-fXB" customClass="UIFloatingFieldView" customModule="FlatDesignElements" customModuleProvider="target">
+                                <rect key="frame" x="68" y="229" width="239" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="239" id="vgQ-nN-eXr"/>
+                                </constraints>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="007-user"/>
+                                </userDefinedRuntimeAttributes>
                             </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tjR-os-EyJ" customClass="UIFloatingFieldView" customModule="FlatDesignElements" customModuleProvider="target">
+                                <rect key="frame" x="68" y="299" width="239" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="239" id="7HT-iL-myF"/>
+                                </constraints>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="004-lock"/>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GhK-yI-JZ5">
+                                <rect key="frame" x="65.5" y="457" width="244" height="43"/>
+                                <color key="backgroundColor" red="0.85490202900000001" green="0.33725491169999999" blue="0.2078431547" alpha="1" colorSpace="deviceRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="244" id="GOv-QH-KSN"/>
+                                    <constraint firstAttribute="height" constant="43" id="dPM-AM-fuF"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
+                                <state key="normal" title="Login">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="tjR-os-EyJ" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="279" id="5IH-ss-O6f"/>
+                            <constraint firstItem="GhK-yI-JZ5" firstAttribute="top" secondItem="tjR-os-EyJ" secondAttribute="bottom" constant="128" id="J2T-x6-ka0"/>
+                            <constraint firstItem="Poi-8g-fXB" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Jw7-JG-MeQ"/>
+                            <constraint firstItem="GhK-yI-JZ5" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="MCM-Nc-QNF"/>
+                            <constraint firstItem="Poi-8g-fXB" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="209" id="cBo-y8-nzi"/>
+                            <constraint firstItem="tjR-os-EyJ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="wuC-hL-BUu"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="userView" destination="Poi-8g-fXB" id="Gyg-Le-Pj7"/>
@@ -40,4 +77,8 @@
             <point key="canvasLocation" x="136.80000000000001" y="137.18140929535232"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="004-lock" width="64" height="64"/>
+        <image name="007-user" width="64" height="64"/>
+    </resources>
 </document>
