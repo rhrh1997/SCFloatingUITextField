@@ -21,6 +21,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pexels-photo-129922" translatesAutoresizingMaskIntoConstraints="NO" id="WCF-v8-fYV">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Poi-8g-fXB" customClass="UIFloatingFieldView" customModule="FlatDesignElements" customModuleProvider="target">
                                 <rect key="frame" x="68" y="229" width="239" height="30"/>
                                 <constraints>
@@ -40,7 +43,7 @@
                                 </constraints>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="004-lock"/>
                                 </userDefinedRuntimeAttributes>
@@ -57,14 +60,26 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="FlatDesignElements" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d3d-ns-a3J">
+                                <rect key="frame" x="71" y="94" width="233" height="49"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="30"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="tjR-os-EyJ" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="279" id="5IH-ss-O6f"/>
+                            <constraint firstItem="WCF-v8-fYV" firstAttribute="top" secondItem="d3d-ns-a3J" secondAttribute="bottom" constant="-143" id="AfO-eI-gaV"/>
                             <constraint firstItem="GhK-yI-JZ5" firstAttribute="top" secondItem="tjR-os-EyJ" secondAttribute="bottom" constant="128" id="J2T-x6-ka0"/>
                             <constraint firstItem="Poi-8g-fXB" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Jw7-JG-MeQ"/>
+                            <constraint firstItem="WCF-v8-fYV" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="LLq-Ya-1lR"/>
+                            <constraint firstItem="d3d-ns-a3J" firstAttribute="centerX" secondItem="WCF-v8-fYV" secondAttribute="centerX" id="M4o-Oq-kFM"/>
                             <constraint firstItem="GhK-yI-JZ5" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="MCM-Nc-QNF"/>
                             <constraint firstItem="Poi-8g-fXB" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="209" id="cBo-y8-nzi"/>
+                            <constraint firstAttribute="trailing" secondItem="WCF-v8-fYV" secondAttribute="trailing" id="ccG-ma-Su8"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="WCF-v8-fYV" secondAttribute="bottom" id="gDz-cO-ith"/>
+                            <constraint firstItem="WCF-v8-fYV" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="v2R-1i-ECC"/>
                             <constraint firstItem="tjR-os-EyJ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="wuC-hL-BUu"/>
                         </constraints>
                     </view>
@@ -80,5 +95,6 @@
     <resources>
         <image name="004-lock" width="64" height="64"/>
         <image name="007-user" width="64" height="64"/>
+        <image name="pexels-photo-129922" width="3506" height="2329"/>
     </resources>
 </document>
